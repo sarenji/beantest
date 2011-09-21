@@ -1,0 +1,34 @@
+{
+  "name"          : "beantest",
+  "version"       : "0.0.1",
+  "description"   : "Beantest: autotest jasmine-node tests",
+  "bugs"          : "https://github.com/sarenji/beantest/issues",
+  "keywords"      : ["autotest", "testing", "jasmine", "node"],
+  "maintainers"   : [{
+     "name"  : "David Peter",
+     "email" : "david.a.peter@gmail.com",
+     "web"   : "http://davidpeter.me"
+  }],
+  "licenses": [{
+    "type": "MIT",
+    "url": "https://github.com/sarenji/beantest/raw/master/LICENSE"
+  }],
+  "repositories"  : [{
+    "type": "git", 
+    "url": "git://github.com/sarenji/beantest.git"
+  }],
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies"  : {
+    "coffee-script" : ">=1.1.2",
+    "jasmine-node"  : "1.0.9",
+    "growl"         : ">=1.1.0",
+    "notify-send"   : ">=0.1.2"
+  },
+  "scripts" : {
+    "postinstall" : "coffee -b -c lib/* bin/*"
+  },
+  "bin": "./bin/beantest",
+  "main": "./lib/beantest"
+}
