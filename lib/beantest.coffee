@@ -25,4 +25,4 @@ runTest = (curr, prev) ->
       if fileName not of seen
         seen[fileName] = true
         fs.watchFile fileName, { interval: REFRESH_RATE }, runTest
-    setTimeout beantest, REFRESH_RATE
+    setTimeout @beantest, REFRESH_RATE

@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var fs   = require('fs');
+
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'test';
+}
+
+require(path.join(__dirname, '../lib/cli.js'));

@@ -27,8 +27,8 @@
     "notify-send"   : ">=0.1.2"
   },
   "scripts" : {
-    "postinstall" : "coffee -b -c lib/* bin/*"
+    "postinstall" : "coffee -b -c lib/*"
   },
-  "bin": "./bin/beantest",
+  "bin": "bin/beantest",
   "main": "./lib/beantest"
 }
