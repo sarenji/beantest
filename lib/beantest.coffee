@@ -13,7 +13,7 @@ runTest = (curr, prev) ->
     console.log "[beantest] Change in file detected. Rerunning tests...\n"
     shouldRun = true
 
-@beantest = ->
+beantest = ->
   if shouldRun and canRun
     exec "coffee #{RUN_PATH}", (error, stdout, stderr) ->
       console.log(if error then stderr else stdout)
@@ -25,4 +25,6 @@ runTest = (curr, prev) ->
       if fileName not of seen
         seen[fileName] = true
         fs.watchFile fileName, { interval: REFRESH_RATE }, runTest
-    setTimeout @beantest, REFRESH_RATE
+    setTimeout beantest, REFRESH_RATE
+
+@beantest = beantest
