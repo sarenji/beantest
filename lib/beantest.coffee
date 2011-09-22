@@ -13,12 +13,13 @@ runTest = (curr, prev) ->
     console.log "[beantest] Change in file detected. Rerunning tests...\n"
     shouldRun = true
 
-beantest = ->
+beantest = (persistent=true) ->
   if shouldRun and canRun
     exec "coffee #{RUN_PATH}", (error, stdout, stderr) ->
       console.log(if error then stderr else stdout)
       canRun = true
     shouldRun = canRun = false
+  return unless persistent
   exec 'find . | grep "\\.coffee$"', (error, stdout, stderr) ->
     fileNames = stdout.split('\n')
     for fileName in fileNames
