@@ -1,6 +1,6 @@
 {
   "name"          : "beantest",
-  "version"       : "0.0.1",
+  "version"       : "0.0.2",
   "description"   : "Beantest: autotest jasmine-node tests",
   "bugs"          : "https://github.com/sarenji/beantest/issues",
   "keywords"      : ["autotest", "testing", "jasmine", "node"],
