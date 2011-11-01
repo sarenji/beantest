@@ -27,7 +27,7 @@ jasmine.executeSpecsInFolder(
     if results.failedCount > 0
       message = "#{results.failedCount} tests failed! #{message}"
       urgency = 'critical'
-    growl.notify message, title: TITLE, sticky: urgency == 'critical'
+    growl.notify message, title: TITLE
     notify[urgency].category(TITLE).notify message
   ,
   IS_VERBOSE,
