@@ -3,7 +3,11 @@ path   = require 'path'
 fs     = require 'fs'
 
 REFRESH_RATE = 500        # in msecs
-RUN_PATH     = path.join __dirname, "run_test.coffee"
+EXECUTE_WITH = "node"
+RUN_PATH     = path.join __dirname, "run_test.js"
+unless path.exists RUN_PATH
+  EXECUTE_WITH = "coffee"
+  RUN_PATH     = path.join __dirname, "run_test.coffee"
 seen         = {}         # cache of file names
 shouldRun    = true       # if a change in file was detected
 canRun       = true       # if tests are running right now, don't run.
@@ -15,7 +19,7 @@ runTest = (curr, prev) ->
 
 beantest = (persistent=true) ->
   if shouldRun and canRun
-    exec "coffee #{RUN_PATH}", (error, stdout, stderr) ->
+    exec "#{EXECUTE_WITH} #{RUN_PATH}", (error, stdout, stderr) ->
       console.log(if error then stderr else stdout)
       canRun = true
     shouldRun = canRun = false
