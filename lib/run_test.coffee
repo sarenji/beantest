@@ -32,6 +32,7 @@ jasmine.executeSpecsInFolder(
   ,
   IS_VERBOSE,
   SHOW_COLORS,
+  false,
   /spec\.(js|coffee)$/i,
   {report: false}
 )
