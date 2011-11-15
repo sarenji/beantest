@@ -43,7 +43,7 @@ beantest = (persistent=true) ->
     for fileName in fileNames
       if fileName not of seen
         seen[fileName] = true
-        fs.watchFile fileName, { interval: REFRESH_RATE }, runTest
+        fs.watch fileName, { interval: REFRESH_RATE }, runTest
     setTimeout beantest, REFRESH_RATE if fileNames.length > 0
 
 @beantest = beantest
